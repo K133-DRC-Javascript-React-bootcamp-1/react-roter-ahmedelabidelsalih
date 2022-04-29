@@ -1,0 +1,16 @@
+.container nav {
+ background-color: #352D2F;
+ width: 25%;
+margin: 0 auto;
+ 
+}
+.container nav a {
+color: #551A8B;
+text-decoration: none;
+font-weight: bold;
+margin: 20px;
+font-size:22px;
+}
+.container nav a.active {
+    color:red;
+   }

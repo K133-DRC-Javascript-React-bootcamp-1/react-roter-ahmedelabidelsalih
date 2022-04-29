@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter  , Route , Routes } from 'react-router-dom';
 
-function App() {
+import './App.css';
+import About from './Component/About';
+import Bootcamp from './Component/Bootcamp';
+import Bootcampb from './Component/Bootcampb';
+import Bootcampf from './Component/Bootcampf';
+import Error from './Component/Error';
+import Home from './Component/Home';
+import Nav from './Component/Nav';
+
+const  App=()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <div className='App'>
+    <Nav />
+    <Routes>
+     <Route  path="/Home" element={<Home />} />
+     <Route path="/About" element={<About />} />
+     <Route path="/Bootcamp" element={<Bootcamp />}>
+     <Route path="Bootcampb" element={<Bootcampb />} />
+     <Route path="Bootcampf" element={<Bootcampf />} />
+     </Route>
+     <Route path="*" element={<Error />} />
+     </Routes>
+     </div>
+    </BrowserRouter>
   );
 }
 
